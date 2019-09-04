@@ -8,16 +8,16 @@ public class Main {
 	public static void main(String[] args) {
 
 		// 1. 읜존관계
-//		MyGetSum myGetSum = new MyGetSum();	//main과 MyGetSum은 의존관계에 있다.
+//		MyGetSum mgs = new MyGetSum();	//main과 MyGetSum은 의존관계에 있다.
 //
-//		myGetSum.setGetsum(new GetSum());
-//		myGetSum.setA(10);
-//		myGetSum.setB(100);
+//		mgs.setGetsum(new GetSum());
+//		mgs.setA(10);
+//		mgs.setB(100);
 
-		// 2. DI이용
+		// 2. 설정파일을 이용하여 의존성 주입
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:getsum.xml");
-		MyGetSum myGetSum = ctx.getBean("myGetSum", MyGetSum.class);
+		MyGetSum mgs = ctx.getBean("myGetSum", MyGetSum.class);
 
-		myGetSum.sum();
+		mgs.sum();
 	}
 }

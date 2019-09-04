@@ -1,7 +1,7 @@
 package com.douzone.di_ex01;
 
 public class MyGetSum {
-	public GetSum getsum;
+	GetSum getsum;
 	private int a;
 	private int b;
 
@@ -13,8 +13,9 @@ public class MyGetSum {
 		getsum.sum(a, b);
 	}
 
-	public void setGetsum(GetSum getsum) {
-		this.getsum = getsum;
+	// setter 설정메소드를 사용하여 의존성 주입
+	public void setGetsum(GetSum gs) {
+		this.getsum = gs;
 	}
 
 	public void setA(int a) {
