@@ -4,7 +4,7 @@ public class ExamDao {
 
 	private String msg;
 
-	public ExamDao() {}
+	public ExamDao() {}// 기본 생성자
 
 	public ExamDao(String message) {
 		this.msg = message;
