@@ -15,9 +15,13 @@ public class Main {
 //		mgs.setB(100);
 
 		// 2. 설정파일을 이용하여 의존성 주입
+		// Spring container 객체는 close 메소드를 통해 소멸된다.
 		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:getsum.xml");
 		MyGetSum mgs = ctx.getBean("myGetSum", MyGetSum.class);
 
 		mgs.sum();
+
+		// Spring container 객체는 close 메소드를 통해 소멸된다.
+		ctx.close();
 	}
 }

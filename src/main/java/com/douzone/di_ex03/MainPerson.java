@@ -18,6 +18,7 @@ public class MainPerson {
 		pi.setPerson(ps);
 		pi.getPerson();
 
+		// Spring container 객체는 close 메소드를 통해 소멸된다.
 		ctx.close();
 	}
 }
