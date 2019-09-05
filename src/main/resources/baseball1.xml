@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="player1" class="com.douzone.di_ex06.Player">
+		<constructor-arg value="박병호"/>
+		<constructor-arg value="28"/>
+		<constructor-arg>
+			<list>
+				<value>공격: 4번타자</value>
+				<value>수비: 1루수</value>
+			</list>
+		</constructor-arg>
+
+		<property name="height">
+			<value>188</value>
+		</property>
+		<property name="weight" value="85">
+		</property>
+	</bean>
+
+	<bean id="player2" class="com.douzone.di_ex06.Player">
+		<constructor-arg value="박찬호"/>
+		<constructor-arg value="45"/>
+		<constructor-arg>
+			<list>
+				<value>공격: X</value>
+				<value>수비: 투수</value>
+				<value>주력스킬: 커브</value>
+			</list>
+		</constructor-arg>
+
+		<property name="height">
+			<value>190</value>
+		</property>
+		<property name="weight" value="90">
+		</property>
+	</bean>
+
+	<bean id="playerInfo1" class="com.douzone.di_ex06.PlayerInfo">
+		<property name="player">
+			<ref bean="player2"/>
+		</property>
+	</bean>
+
+</beans>

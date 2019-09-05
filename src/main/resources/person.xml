@@ -27,6 +27,7 @@
 		<constructor-arg value="999999-2345678"/>
 	</bean>
 
+	<!-- PersonInfo가 Person에 의존하게 설정 -->
 	<bean id="personInfo" class="com.douzone.di_ex03.PersonInfo">
 		<constructor-arg>
 			<ref bean="person1"/>
