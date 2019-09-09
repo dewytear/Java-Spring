@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	">
+
+	<!-- XML 안에서 JAVA코드를 불러오기 -->
+	<context:annotation-config/>
+	<bean class="com.douzone.di_ex08.ConfigApp"/>
+
+	<bean id="player2" class="com.douzone.di_ex08.Player">
+		<constructor-arg value="이용규"/>
+		<constructor-arg value="30"/>
+		<constructor-arg>
+		<list>
+		<value>공격: 1번타자</value>
+		<value>수비: 외야수</value>
+		</list>
+		</constructor-arg>
+		<property name="height" value="175"/>
+		<property name="weight" value="72"/>
+	</bean>
+
+</beans>
