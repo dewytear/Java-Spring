@@ -200,12 +200,12 @@
 	 . Environment  -->getPropertySources 객체를 얻기
 	 . PropertySources -->프로퍼티를 추가(addLast)하거나, 추출(getProperty) 작업을 한다.
 
-
 	- 프로퍼티 파일을 이용한 빈설정
 	 .XML 파일에 외부프로퍼티 파일을 명시하는 방법
 	 .Java 파일에 외부 프로퍼티 파일을 명시하는 방법
 
 	- 프로파일 속성(profile)을 이용한 빈설정
+
 
   [IoC(Inversion of Control- 제어의 역전)란?]
 	: IoC란 프로그램의 제어 흐름 구조가 바뀌는 것
@@ -214,7 +214,6 @@
 		main()과 같은 프로그램이 시작되는 지점에서 사용할 오브젝트를 결정, 생성하고,
 		생성된 오브젝트 내의 메소드를 호출하는 작업을 반복하는 구조이다.
 		즉, 모든 종류의 작업을 사용하는 쪽에서 제어하는 구조
-
 
 	**	IoC는 제어 흐름의 개념을 거꾸로 뒤집는 개념이다.
 		오브젝트는 자신이 사용할 오브젝트를 스스로 생성하거나 선택하지 않는다.
@@ -272,7 +271,6 @@
   [AOP : 관점 지향 프로그래밍]
 	:기존 OOP를 보완 한 개념(핵심사항과 공통관심사항을 분리하여 구현)
 
-
 	AOP는 primary concern과 cross-cutting concern을 별도의 코드로 구현해서
 	   최종적으로 이둘을 조합해서 완성하는 것
 
@@ -304,6 +302,7 @@
 	    client   ------>   proxy   --------> Target
 	    (호출부)           (대리인/대행)          (핵심기능)
 
+
   [XML 기반의 AOP 구현과정]
       . 의존설정(pom.xml)
         <!-- aspectj (https://www.eclipse.org/aspectj/) -->
@@ -321,8 +320,8 @@
         </dependency>
 
       . 공통기능 클래스 제작 -Advice 역할 클래스
-
       . XML파일에 Aspect
+
 
   [Advice 실행 종류]
       <aop:before> : 핵심기능이 실행 되기 전엔 advice를 실행한다.
@@ -331,13 +330,13 @@
       <aop:after> : 핵심기능 실행 후에 advice를 실행한다.(exception이 발생하더라도..)
       <aop:around> : 핵심기능 실행 전/후 및 exception 발생시 advice 실행
 
+
   [AspectJ Pointcut 표현식]
 	Pointcut을 지정할 때 사용하는 표현식으로 AspectJ문법을 사용한다.
 
 	*  : 모든
 	.  : 현재
 	.. : 0개이상
-
 
 	execution : ("execution(public void get*(..))") //public void인 모든 get메소드(인자가 0개 또는 그이상)
 	          : ("execution(* com.test.aop.*.*())") //com.test.aop 패키지에 파라미터가 없는 모든 메소드
@@ -352,13 +351,13 @@
 	bean   : ("bean(staff)") //staff 빈에만 적용
 	         ("bean(*er)")   // ~er로 끝나는 빈에만 적용
 
+
   [@Aspect를 이용한 AOP 구현]
 	- 의존설절(pom.xml)
 	- @Aspect 어노테이션을 이용한 Aspect 클래스를 제작
 	- XML파일에 <aop:aspectj-autoproxy /> 설정
 
 	----------Aspect Class--------
-
 	          @Pointcut
 
 	          @Around
@@ -366,6 +365,3 @@
 	          @AfterReturning
 	          @AfterThrowing
 	          @After
-
-
-
