@@ -195,13 +195,12 @@
 
   [외부 파일을 이용한 빈 설정]
 	- EnvironmentAware, Envirionment 인터페이스를 활용
-
 	 . Context  --> getEnvironment() -->Environment 객체 얻기
 	 . Environment  -->getPropertySources 객체를 얻기
 	 . PropertySources -->프로퍼티를 추가(addLast)하거나, 추출(getProperty) 작업을 한다.
 
-	- 프로퍼티 파일을 이용한 빈설정
-	 .XML 파일에 외부프로퍼티 파일을 명시하는 방법
+	- 프로퍼티(properties) 파일을 이용한 빈설정
+	 .XML 파일에 외부 프로퍼티 파일을 명시하는 방법
 	 .Java 파일에 외부 프로퍼티 파일을 명시하는 방법
 
 	- 프로파일 속성(profile)을 이용한 빈설정
