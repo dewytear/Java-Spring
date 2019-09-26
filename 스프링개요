@@ -271,7 +271,7 @@
   [AOP : 관점 지향 프로그래밍]
 	:기존 OOP를 보완 한 개념(핵심사항과 공통관심사항을 분리하여 구현)
 
-	AOP는 primary concern과 cross-cutting concern을 별도의 코드로 구현해서
+	AOP는 core(primary) concern과 cross-cutting concern을 별도의 코드로 구현해서
 	   최종적으로 이둘을 조합해서 완성하는 것
 
 	# 주요 용어 (중요)
@@ -283,8 +283,9 @@
 	- jointPoint: code와 advice를 연결해 주는 설정 정보, advice가 적용 가능한 지점(메소드 호출, 필드값 변경)
 	- Point-cut: JointPoint의 부분집합으로서 실제 advice가 적용되는 Jointpoint
 	- Weaving : Code, Advice, Point-cut등을 조합해서 어플리케이션을 만들어 가는 과정
-
 	- Target : 핵심사항(core)이 구현된 객체
+	- Aspect : 여러 객체에 공통으로 적용되는 기능(트랜젝션, 보안 등)
+
 	AOP(Aspect Oriented Programming)의 Aspect는 Advice과 Point-cut을 함께 지칭하는 단어
 
 	* 스프링은 자체적인 프록시 기반의 AOP를 지원
@@ -298,21 +299,23 @@
 	  - 어노테이션을 이용하는 방법(@AspectJ 어노테이션 기반의 AOP구현)
 
 	* 스프링에서 AOP 구현 방법은 Proxy를 이용한다.
+	- Proxy : 대행해주는 프로그램(핵심기능을 제외한 공통로직을 수행)
 
-	    client   ------>   proxy   --------> Target
-	    (호출부)           (대리인/대행)          (핵심기능)
+	    client   ------>   proxy   ------>   Target
+	   (호출부)        (대리인/대행)       (핵심기능)
 
 
   [XML 기반의 AOP 구현과정]
       . 의존설정(pom.xml)
+
+        <!-- AOP -->
         <!-- aspectj (https://www.eclipse.org/aspectj/) -->
         <dependency>
-            <gropuId>org.aspectj</groupId>
+            <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.4</version>
         </dependency>
-
-        <!-- AOP -->
+        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
